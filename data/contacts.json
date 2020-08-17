@@ -1,0 +1,30 @@
+[
+  {
+    "full_name": "Emil Reji",
+    "phone_number": "9737698878",
+    "email": "emil315.reji@gmail.com",
+    "tags": "male, test",
+    "id": 1
+  },
+  {
+    "full_name": "Esmeralda Weber",
+    "phone_number": "1234567890",
+    "email": "esmeralda.weber@huel.biz",
+    "tags": "female, test",
+    "id": 2
+  },
+  {
+    "full_name": "John Smith",
+    "phone_number": "00000000000",
+    "email": "john.smith@yahoo.com",
+    "tags": "real",
+    "id": 3
+  },
+  {
+    "full_name": "Emil Reji",
+    "phone_number": "9737698878",
+    "email": "emil315.reji@gmail.com",
+    "tags": "duplicate",
+    "id": 4
+  }
+]

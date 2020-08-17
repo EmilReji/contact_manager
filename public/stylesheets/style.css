@@ -1,0 +1,194 @@
+/*
+----------------------------------------
+Tantek Celik's Whitespace Reset
+     Author:    Tantek Celik, Shane Riley
+    Version:    (CC) 2010 Some Rights Reserved - http://creativecommons.org/licenses/by/2.0
+Description:  Resets default styling of browsers to a common base
+----------------------------------------
+*/
+
+ul, ol { list-style: none; }
+h1, h2, h3, h4, h5, h6, pre, code { font-size: 1em; }
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote,
+fieldset, input, dl, dt, dd, figure, figcaption {
+  margin: 0;
+  padding: 0;
+}
+a img, :link img, :visited img, fieldset { border: none; }
+address { font-style: normal; }
+header, section, article, nav, footer, hgroup, details, summary, figure, main {
+  display: block;
+}
+mark {
+  color: inherit;
+  background-color: transparent;
+}
+abbr { border: none; }
+summary::-webkit-details-marker { display: none; }
+
+/*Sets all elements to border-box; means width + padding + border = actual width*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*My CSS*/
+
+body {
+  background-color: #fff;
+  font-size: 18px;
+}
+
+header {
+  background-color: #6f5499;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 2rem;
+  padding: 15px;
+}
+
+header h3 {
+  color: #cdbfe3;
+  font-size: 1rem;
+  padding-bottom: 20px;
+}
+
+article, footer {
+  width: 60%;
+  margin: auto;
+}
+
+
+#functionality {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #fff;
+  border: 1px solid #6f5499;
+  border-radius: 5px;
+  color: #6f5499;
+}
+
+button:hover {
+  background-color: #6f5499;
+  color: #fff;
+}
+
+button.addContact {
+  height: 35px;
+  width: 100px;
+  margin: 20px;
+}
+
+#functionality input {
+  height: 25px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#contactDisplay.none {
+  margin: auto;
+  margin-top: 25px;
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#contacts p {
+  padding-top: 30px;
+}
+
+.contact {
+  display: inline-block;
+  width: 24%;
+  padding-top: 30px;
+}
+
+.contact h3 {
+  padding-bottom: 15px;
+}
+
+.contact p {
+  font-size: 0.8rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.75rem;
+  border-top: 1px solid #ccc;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#contactPage, #contactDisplay {
+  display: none;
+}
+
+#contactPage h1 {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 1.5rem;
+}
+
+#contactForm{
+  display: grid;
+  grid-template-columns: repeat(3, 5fr);
+}
+
+#contactForm label {
+  grid-column-start: 1; 
+  grid-column-end: 2; 
+  text-align: right;
+  padding-right: 10px;
+  margin: 10px;
+  font-size: 1rem;
+}
+
+#contactForm input {
+  grid-column-start: 2; 
+  grid-column-end: 5; 
+  height: 25px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#contactForm button {
+  margin: 10px;
+  padding: 10px;
+}
+
+#contactForm button.submit {
+  grid-column-start: 2; 
+  grid-column-end: 3; 
+}
+
+#contactForm button.cancel {
+  grid-column-start: 3; 
+  grid-column-end: 5; 
+}
+
+#contactForm input.error {
+  border: 1px solid red;
+}
+
+#contactForm p.errorMsg {
+  font-size: 0.75rem;
+  color: red;
+  grid-column-start: 2; 
+  grid-column-end: 5;
+  padding-left: 10px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/handlebars.js"></script>
+  <script src="javascripts/scriptOld2.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Contact Manager</h1>
+    <h3>Using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap</h3>
+  </header>
+  <article id="mainPage">
+    <section id="functionality">
+      <button class="addContact">Add Contact</button>
+      <input id="search" type="text" placeholder="Search"/> 
+    </section>
+    <section id="contactDisplay" style="display:none">
+    </section>
+  </article>
+  <footer>
+    <p>Developed by <a href="https://www.devsaran.com/">Devsaran.com</a> and <a href="https://www.239listing.com/">239 Listing Real Estate</a>.</p>
+  </footer>
+</body>
+<script id="contacts" type="text/x-handlebars-template">
+  {{#each contacts}}
+    <div id="contact{{id}}" class="contact">
+      <h3>{{full_name}}</h3>
+      <p><strong>Phone Number:</strong></p>
+      <p>{{phone_number}}</p>
+      <p><strong>Email:</strong></p>
+      <p>{{email}}</p>
+      <p><strong>Tags:</strong></p>
+      <p>{{tags}}</p>
+      <button class="editContact">Edit</button>
+      <button class="deleteContact">Delete</button>
+    </div>
+  {{/each}}
+</script>
+<script id="addContactScript" type="text/x-handlebars-template">
+  <article id="addContactPage" style="display:none">
+    <h1>Create Contact</h1>
+    <form id="addContactForm">
+      <label for="full_name">Full Name:</label>
+      <input id="full_name" name="full_name" type="text" required />
+      <label for="email">Email Address:</label>
+      <input id="email" name="email" type="email" required />
+      <label for="phone_number">Telephone Number:</label>
+      <input id="phone_number" name="phone_number" type="tel" required />
+      <label for="tags">Tags (comma seperated):</label>
+      <input id="tags" name="tags" type="text" />
+      <button class="submit">Submit</button>
+      <button class="cancel">Cancel</button>
+    </form>
+  </article>
+</script>
+<script id="updateContactScript" type="text/x-handlebars-template">
+  <article id="updateContactPage">
+    <h1>Create Contact</h1>
+    <form id="updateContactForm" data-id="{{id}}" >
+      <label for="full_name">Full Name:</label>
+      <input id="full_name" name="full_name" type="text" required value="{{full_name}}" />
+      <label for="email">Email Address:</label>
+      <input id="email" name="email" type="email" required value="{{email}}" />
+      <label for="phone_number">Telephone Number:</label>
+      <input id="phone_number" name="phone_number" type="tel" required value="{{phone_number}}" />
+      <label for="tags">Tags (comma seperated):</label>
+      <input id="tags" name="tags" type="text" value="{{tags}}" />
+      <button class="submit">Submit</button>
+      <button class="cancel">Cancel</button>
+    </form>
+  </article>
+</script>
+<script id="noContactMatch" type="text/x-handlebars-template">
+  <p>There are no contacts starting with <strong>{{inputVal}}</strong></p>
+</script>
+</html>
